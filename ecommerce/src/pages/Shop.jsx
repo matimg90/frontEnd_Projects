@@ -1,20 +1,16 @@
  import { useEffect, useState } from "react";
 import Book from "../components/Book.jsx";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import data from "../books.json";
 import './Shop.css'
 import Title from "../components/Title.jsx";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+//import Skeleton from "react-loading-skeleton";
+//import "react-loading-skeleton/dist/skeleton.css";
 
 function Shop() {
   const [books, setBooks] = useState([]);
-  function fetchBooks() {
-      return data
-  }
   useEffect(() => {
     setTimeout(() => {
-      //fetchBooks();
       setBooks(data);
       }, 0);
     });

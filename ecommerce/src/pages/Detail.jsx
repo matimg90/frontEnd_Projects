@@ -1,12 +1,12 @@
-import data from '../books.json';
-import { useParams, useLocation } from "react-router-dom";
+//import data from '../books.json';
+import { useLocation } from "react-router-dom";
 import Book from '../components/Book';
 import './Detail.css'
 
 function Detail(){
     const location = useLocation()
     const { book } = location.state
-    const {index} = useParams();
+    //const {index} = useParams();
     return(
         <div className="modal">
             <p className="modal__title">{book.title}</p>

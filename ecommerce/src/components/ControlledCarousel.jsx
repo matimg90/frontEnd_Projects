@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import books from "../books.json";
-import Book from "../components/Book.jsx";
-import { Link } from "react-router-dom";
+//import Book from "../components/Book.jsx";
 import "./ControlledCarousel.css"
 
 class CarouselComp extends Component {
@@ -22,7 +20,7 @@ class CarouselComp extends Component {
             emulateTouch={true}>
           {books.map((book, index) => (
                 <div className="Carousel__item" key={index}>
-                  <img src={`${process.env.PUBLIC_URL}/${book.imageLink}`}/>
+                  <img src={`${process.env.PUBLIC_URL}/${book.imageLink}`} alt=""/>
                   <p className="legend">{book.title}</p>
                 </div>
           ))}

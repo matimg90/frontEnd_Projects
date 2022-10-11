@@ -1,17 +1,14 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import "./CartComponent.css"
 function CartComponent (){
     const bookPrice = 10.00;
-    const [qty, setQty] = useState(1);
     const [total, setTotal] = useState(0);
-    const [cartItems,setCartItems] = useState([])
+    //const [cartItems,setCartItems] = useState([])
     const imageLink = "images/things-fall-apart.jpg"
-    const calcTotal = (()=>{
-        return (bookPrice * qty).toPrecision(4,2)
-    })
-    useEffect(() => {
-        setTotal(calcTotal())
-    },[])
+    const calcTotal = event =>{
+        setTotal ((bookPrice * event.target.value).toPrecision(4,2))
+        console.log(event.target.value)
+    }
 
 
     return(
@@ -34,7 +31,7 @@ function CartComponent (){
                     <div className="cart__quantity">
                         <input className="cart__quantity--box"
                             type="number" 
-                            onChange={(e) => setQty(e.value)}
+                            onChange={calcTotal}
                             defaultValue = {1}
                             pattern="[0-9]"
                         />

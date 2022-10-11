@@ -7,6 +7,8 @@
     align-items: center;
     column-gap: 1vh;
     height: 10vh;
+    margin: 2em;
+    border-radius: 1em;
 }
 .searchBox{
     flex-grow:1;
@@ -17,7 +19,6 @@
     border: 0px;
     height: 5vh;
     width: 40vw;
-    background-color: rgba(255, 255, 255, 0.605);
 }
 .Title{
     font-size: 24px;
@@ -46,3 +47,35 @@
     background-color: rgba(18, 51, 112, 0.555);
     transition: all 200ms;
 }
+
+/* Searchbox */
+.searchBox__box,.dropdown{
+    background-color: rgba(255, 255, 255, 0.605);
+}
+.search-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown {
+    display: flex;
+    position: absolute;
+    overflow-y: auto;
+    flex-direction: column;
+    border: 1px solid gray;
+    width: 40vw;
+  }
+  
+  .dropdown:empty {
+    border: none;
+    
+  }
+  
+  .dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+  }
+  .search-inner {
+    display: flex;
+  }

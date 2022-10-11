@@ -9,7 +9,7 @@
     width: 100%;
     font-weight: bold;
     color: white;
-    font-style: oblique;
+    /* font-style: oblique; */
     flex-wrap: wrap;
 }
 .footer__img--git, 

@@ -14,8 +14,9 @@ class CarouselComp extends Component {
             showIndicators={false}
             showThumbs={false}
             showStatus={false}
-            width={"17vw"}
+            width={"90%"}
             centerMode={true}
+            centerSlidePercentage={30}
             swipeable={true}
             emulateTouch={true}>
           {books.map((book, index) => (

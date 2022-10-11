@@ -3,7 +3,6 @@ import CarouselComp from "../components/ControlledCarousel.jsx";
 function Home() {
   return (
     <div className="body">
-      <div className="body__img">
         <section>
           <Title text="Best bookstore in America"></Title>
           <p>
@@ -26,7 +25,6 @@ function Home() {
           </div>
         </section>
       </div>
-    </div>
   );
 }
 

@@ -1,0 +1,14 @@
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.book{
+    text-decoration: none;
+}
+.book:hover{
+    background-color: rgba(18, 51, 112, 0.275);
+    cursor: pointer;
+}

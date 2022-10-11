@@ -1,0 +1,52 @@
+.App{
+  background-color: rgba(198, 195, 184, 0.621);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  align-content:space-around;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+.title{
+  color: rgba(18, 51, 112, 0.6);
+  font-size: clamp(1rem, 1rem + 10vw , 7rem);
+  max-width: 60rem;
+  text-align: center;
+}
+p{
+  font-size: clamp(1rem, 1rem + 10vw , 2rem);
+}
+.body, .body__img, section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0, 1em;
+  margin: 0 auto;
+}
+.body, .body__img{
+  min-height: 80vh;
+}
+.body__img{
+  background-image: url("../public/images/bak-img1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+  
+}
+.featuredBooks, .mostSoldBooks{
+  width: 50vw;
+  min-height: 20em;
+  display: flex;
+  flex-direction: column;
+}
+.bookSection{
+  display: flex;
+  flex-direction: row;
+}

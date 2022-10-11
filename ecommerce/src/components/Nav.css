@@ -1,0 +1,48 @@
+.nav{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(18, 51, 112, 0.555);
+    justify-content:flex-end;
+    align-items: center;
+    column-gap: 1vh;
+    height: 10vh;
+}
+.searchBox{
+    flex-grow:1;
+    justify-self: center;
+    flex-grow: 3;
+}
+.searchBox__box{
+    border: 0px;
+    height: 5vh;
+    width: 40vw;
+    background-color: rgba(255, 255, 255, 0.605);
+}
+.Title{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: oblique;
+    font-family: sans-serif;
+    justify-self: flex-start;
+    flex-grow: 3;
+    color: azure;
+}
+.menuItems{
+    display: flex;
+    flex-grow: 0.2;
+    height: 40%;
+    justify-content: center;
+}
+.menuItems__Link{
+    color: white;
+    align-self: center;
+    justify-self: center;
+    font-style: oblique;
+    text-decoration: none;
+    font-weight: bold;
+}
+.menuItems:hover{
+    background-color: rgba(18, 51, 112, 0.555);
+    transition: all 200ms;
+}

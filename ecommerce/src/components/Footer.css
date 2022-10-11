@@ -1,0 +1,20 @@
+.footer{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(18, 51, 112, 0.555);
+    justify-content:center;
+    align-items: flex-start;
+    height: 10vh;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    font-style: oblique;
+    flex-wrap: wrap;
+}
+.footer__img--git, 
+.footer__img--linkedIn, 
+.footer__img--gmail{
+  height: 3vh;
+  align-self: start;
+}

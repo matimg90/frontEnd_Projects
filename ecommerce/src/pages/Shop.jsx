@@ -4,7 +4,6 @@ import Book from "../components/Book.jsx";
 import data from "../books.json";
 import "./Shop.css";
 import Title from "../components/Title.jsx";
-import Dropdown from "react-bootstrap/esm/DropdownMenu.js";
 // import DropdownItem from "react-bootstrap/esm/DropdownItem.js";
 //import Skeleton from "react-loading-skeleton";
 //import "react-loading-skeleton/dist/skeleton.css";

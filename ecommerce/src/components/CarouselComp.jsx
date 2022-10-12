@@ -3,14 +3,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import books from "../books.json";
 //import Book from "../components/Book.jsx";
-import "./ControlledCarousel.css"
+import "./CarouselComp.css"
 
 class CarouselComp extends Component {
   render() {
     return (
       <div className="Carousel">
         <Carousel autoPlay={false}
-            showArrows={false}
+            showArrows={true}
             showIndicators={false}
             showThumbs={false}
             showStatus={false}

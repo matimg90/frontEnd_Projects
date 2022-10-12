@@ -1,0 +1,9 @@
+.Carousel__item{
+    padding:1 !important;
+}
+img{
+    height: 70%;
+    max-width: 28vh;
+    object-fit: cover;
+    border-radius: 2em;
+}

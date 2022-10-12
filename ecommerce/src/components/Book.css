@@ -6,13 +6,19 @@
     height: 65vh;
     width: 35vh;
     font-size: 10px;
+    background-color: rgba(18, 51, 112, 0.275);
+    margin: 0.8em;
+    padding: 3em;
+    border-radius: 1em;
 }
 .book:hover, .book__info:hover, .book__info--items:hover{
     cursor: pointer;
 }
 .image{
-    height: 50vh;
-    width: 35vh;
+    height: 70%;
+    max-width: 28vh;
+    object-fit: cover;
+    border-radius: 2em;
 }
 .book__info{
   display: flex;
@@ -26,6 +32,9 @@
 
 .book__info--items{
   font-size: clamp(0.5em, 0.1em + 10vw, 1.5em);
+  color: white;
+  display: table-cell; /*Important to align text*/
+  text-align: center; 
 }
 
 /*mobile phones*/

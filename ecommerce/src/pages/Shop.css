@@ -1,14 +1,41 @@
 .main{
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 .book{
     text-decoration: none;
 }
 .book:hover{
-    background-color: rgba(18, 51, 112, 0.275);
+    background-color: rgba(197, 196, 196, 0.605); 
     cursor: pointer;
+}
+.book-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sort-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 2em;
+}
+.sort{
+    position: inherit;
+    max-width: 6em
+}
+#sortLabel{
+    font-weight: bold;
+    color:rgba(18, 51, 112, 0.781) ;
+    max-height: 2em;
+    font-size: clamp(0.5em, 0.1em + 10vw, 1.5em);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  
 }

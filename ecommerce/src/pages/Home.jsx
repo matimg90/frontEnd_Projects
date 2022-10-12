@@ -1,5 +1,5 @@
 import Title from "../components/Title";
-import CarouselComp from "../components/ControlledCarousel.jsx";
+import CarouselComp from "../components/CarouselComp.jsx";
 function Home() {
   return (
     <div className="body">

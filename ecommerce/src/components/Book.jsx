@@ -17,13 +17,11 @@ function Book({
   //const cover = images(`${imageLink}`).default;
   return (
       <div className="book">
-        <div>
           <img
             className="image"
             src={`${process.env.PUBLIC_URL}/${imageLink}`}
             alt=""
           />
-        </div>
         <div className="book__info">
           <div>
             <label htmlFor="" className="book__info--items">
@@ -38,7 +36,7 @@ function Book({
           <div>
             <label htmlFor="" className="book__info--items">
               {author.length > 0 ? (
-                `Country: ${country}`
+                `Language: ${language}`
               ) : (
                 <Skeleton></Skeleton>
               )}

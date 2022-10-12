@@ -5,16 +5,23 @@
     background-color: rgba(18, 51, 112, 0.555);
     justify-content:center;
     align-items: flex-start;
-    height: 10vh;
+    max-height: 30vh;
     width: 100%;
     font-weight: bold;
     color: white;
     /* font-style: oblique; */
     flex-wrap: wrap;
 }
+.footer__img{
+  display: flex;
+  flex-wrap: wrap;
+}
 .footer__img--git, 
 .footer__img--linkedIn, 
 .footer__img--gmail{
   height: 3vh;
   align-self: start;
+}
+.footer label{
+  font-size: clamp(0.5rem, 1rem + 5vw, 1rem);
 }

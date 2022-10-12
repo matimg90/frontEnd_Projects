@@ -9,7 +9,7 @@ class CarouselComp extends Component {
   render() {
     return (
       <div className="Carousel">
-        <Carousel autoPlay={true}
+        <Carousel autoPlay={false}
             showArrows={false}
             showIndicators={false}
             showThumbs={false}
@@ -19,7 +19,7 @@ class CarouselComp extends Component {
             centerSlidePercentage={30}
             swipeable={true}
             emulateTouch={true}>
-          {books.map((book, index) => (
+          {books.slice(0,8).map((book, index) => (
                 <div className="Carousel__item" key={index}>
                   <img src={`${process.env.PUBLIC_URL}/${book.imageLink}`} alt=""/>
                   <p className="legend">{book.title}</p>

@@ -24,6 +24,10 @@
   flex-grow: 5;
 }
 
+.book__info--items{
+  font-size: clamp(0.5em, 0.1em + 10vw, 1.5em);
+}
+
 /*mobile phones*/
 @media (max-width: 576px) {
     div {

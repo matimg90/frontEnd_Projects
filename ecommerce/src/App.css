@@ -23,18 +23,24 @@ background-size: cover;
 body{
   height: 100vh;
 }
-h1,h2,p{
+h2,p{
   margin: 1em; 
   font-style: oblique;
 } 
+h2{
+  color: rgba(18, 51, 112, 0.781);
+  font-size: clamp(1rem, 1rem + 10vw , 2rem);
+}
 h1{
   color: rgba(18, 51, 112, 0.6);
   font-size: clamp(1rem, 1rem + 10vw , 7rem);
   max-width: 60rem;
   text-align: center;
+  font-style: oblique;
+  margin: 0 auto;
 }
-p{
-  font-size: clamp(1rem, 1rem + 10vw , 2rem);
+p,a,label{
+  font-size: clamp(1rem, 1rem + 5vw , 2rem);
 }
 .body, .body__img, section{
   display: flex;

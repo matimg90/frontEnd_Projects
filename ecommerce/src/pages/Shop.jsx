@@ -34,6 +34,7 @@ function Shop() {
                 pages={book.pages.toString()}
                 year={book.year.toString()}
                 index={index}
+                key={index}
               />
             
         )

@@ -12,6 +12,9 @@ function SearchBox() {
     console.log(searchTerm);
     setInputText(searchTerm);
   };
+  const searchBook = (bookName) => {
+    console.log("searchBook");
+  };
   return (
     <>
       <div className="search-container">
@@ -21,7 +24,7 @@ function SearchBox() {
           placeholder="Buscar..."
           value={inputText}
           onChange={handleChange}
-          onKeyPress={(e) => e.key === "Enter" && onSearch(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && searchBook(e.target.value)}
         />
       </div>
       <div className="dropdown">

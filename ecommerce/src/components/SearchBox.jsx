@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import data from "../books.json";
 import "./Nav";
 function SearchBox() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [inputText, setInputText] = useState("");
   const handleChange = (event) => {
     setInputText(event.target.value);

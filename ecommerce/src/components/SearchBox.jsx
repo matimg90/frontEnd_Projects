@@ -32,7 +32,7 @@ function SearchBox() {
             return (
               searchTerm &&
               bookTitle.startsWith(searchTerm) &&
-              searchTerm != bookTitle
+              searchTerm !== bookTitle
             );
           })
           .slice(0, 5)

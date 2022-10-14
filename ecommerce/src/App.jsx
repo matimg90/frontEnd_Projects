@@ -6,11 +6,18 @@ import Cart from './pages/Cart.jsx'
 import Shop from './pages/Shop.jsx'
 import Detail from './pages/Detail.jsx';
 import Footer from './components/Footer';
+import { createContext } from 'react';
+import { useState } from 'react';
+export const UserContext = createContext(null);
+
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <div className="App">
       <Router>
+      <UserContext.Provider value={[cartItems,setCartItems]}>
         <Nav></Nav>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
@@ -20,6 +27,7 @@ function App() {
           <Route path="/detail/:title" element={<Detail/>}></Route>
           {/* <Route path="/users/:id" element={<Users/>}></Route> */}
         </Routes>
+        </UserContext.Provider>
       </Router>
       <Footer></Footer>
     </div>

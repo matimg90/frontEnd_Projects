@@ -6,11 +6,15 @@
     justify-content:center;
     align-items: flex-start;
     max-height: 30vh;
-    width: 100%;
+    max-width: 100%;
     font-weight: bold;
     color: white;
     /* font-style: oblique; */
     flex-wrap: wrap;
+    margin: 2em;
+    padding: 1em;
+    border-radius: 1em;
+    z-index: 100;
 }
 .footer__img{
   display: flex;

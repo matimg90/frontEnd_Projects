@@ -35,6 +35,7 @@
   color: white;
   display: table-cell; /*Important to align text*/
   text-align: center; 
+  text-decoration: none;
 }
 
 /*mobile phones*/

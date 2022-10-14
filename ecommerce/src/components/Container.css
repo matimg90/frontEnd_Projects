@@ -1,0 +1,13 @@
+#Container{
+    background-color: white;
+    border-color: rgb(237, 5, 5);
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    max-width: 80%;
+}

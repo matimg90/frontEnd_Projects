@@ -1,5 +1,5 @@
 .App{
-  background-color: rgba(198, 195, 184, 0.621);
+  background-color: #EAEDED;
   display: flex;
   flex-direction: column;
   /* height: 100vh; */
@@ -14,11 +14,9 @@
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
 /* to make page not selectable */      
-background-image: url("../public/images/bak-img1.jpg");
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;                        
+/* background-image: url("../public/images/bak-img1.jpg"); */
+/* 
+                      */
 }
 body{
   height: 100vh;
@@ -39,7 +37,9 @@ h1{
   font-style: oblique;
   margin: 0 auto;
 }
-p,a,label{
+p,
+a
+{
   font-size: clamp(1rem, 1rem + 5vw , 2rem);
 }
 .body, .body__img, section{
@@ -62,4 +62,19 @@ p,a,label{
   display: flex;
   flex-direction: row;
   min-height: 20vh;
+}
+h1,h2,p,label{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#title-home{
+  height: 100%;
+  width: 100%;
+  background-image: url("https://i.cbc.ca/1.4242268.1502389734!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/magazine-stack.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;   
+}
+.title{
+  color: rgba(53, 101, 190, 0.781);
 }

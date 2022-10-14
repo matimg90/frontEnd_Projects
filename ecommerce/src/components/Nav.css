@@ -17,6 +17,8 @@
     flex-grow:1;
     justify-self: center;
     min-width: 10vw;
+    display: flex;
+    justify-content: center;
 }
 .searchBox__box{
     border: 0px;
@@ -62,6 +64,7 @@
 .searchBox__box,.dropdown{
     background-color: rgba(255, 255, 255, 0.605); 
     border-radius: 1em;
+    position: relative;
 }
 .search-container {
     display: flex;
@@ -72,6 +75,7 @@
   .dropdown {
     display: flex;
     position: absolute;
+    top: 10.9%;
     overflow-y: auto;
     flex-direction: column;
     border: 1px solid gray;

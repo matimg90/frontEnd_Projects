@@ -23,19 +23,5 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding: 0.8em;
-}
-.sort{
-    position: inherit;
-    max-width: 6em
-}
-#sortLabel{
-    font-weight: bold;
-    color:rgba(18, 51, 112, 0.781) ;
-    max-height: 2em;
-    font-size: clamp(0.5em, 0.1em + 10vw, 1.5em);
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-  
+    margin: 2em;
 }

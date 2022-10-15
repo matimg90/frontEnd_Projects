@@ -11,6 +11,9 @@ function CartComponent() {
     setTotal((bookPrice * event.target.value).toPrecision(4, 2));
     console.log(event.target.value);
   };
+  const handleRemoveBook = (item) => {
+    setCartItems((prev) => [...prev.filter((i) => i !== item)]);
+  };
 
   return (
     <div className="cart">
@@ -32,7 +35,7 @@ function CartComponent() {
                 <div className="cart__book--info">
                   <span className="cart__book--title">{`Title: ${cartItem.title}`}</span>
                   <span className="cart__book--price">{`Price: $${bookPrice}`}</span>
-                  <button className="cart__book--remove">Remove</button>
+                  <button className="cart__book--remove" onClick={()=>handleRemoveBook(cartItem)}>Remove</button>
                 </div>
               </div>
             </div>

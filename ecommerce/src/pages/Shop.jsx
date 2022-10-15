@@ -4,12 +4,22 @@ import { Link } from "react-router-dom";
 import data from "../books.json";
 import "./Shop.css";
 import Title from "../components/Title.jsx";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 // import DropdownItem from "react-bootstrap/esm/DropdownItem.js";
 //import Skeleton from "react-loading-skeleton";
 //import "react-loading-skeleton/dist/skeleton.css";
 
 function Shop() {
   const [books, setBooks] = useState([]);
+  const [sort, setSort] = useState("");
+
+  const handleChange = (event) => {
+    setSort(event.target.value);
+  };
   useEffect(() => {
     setTimeout(() => {
       setBooks(data);
@@ -20,13 +30,23 @@ function Shop() {
       <Title text="Shop"></Title>
       <div className="main">
         <div className="sort-container">
-          <label id="sortLabel" htmlFor="">
-            Sort by:
-          </label>
-          <select className="dropdown sort">
-            <option className="dropdown options">title (asc)</option>
-            <option className="dropdown options">title (desc)</option>
-          </select>
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="sort-label">Sort</InputLabel>
+              <Select
+                labelId="sort-label"
+                id="sort-select"
+                value={sort}
+                label="Sort"
+                onChange={handleChange}
+                defaultValue={10}
+              >
+                <MenuItem value={10}>Title Asc</MenuItem>
+                <MenuItem value={20}>Title Desc</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+          
         </div>
         <div className="book-container">
           {books.map((book, index) => (

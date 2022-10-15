@@ -77,3 +77,8 @@
         gap: 0.8em;
     }
 }
+@media (min-width: 800px) {
+    .menu {
+        display: none;
+    }
+}

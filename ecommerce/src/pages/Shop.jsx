@@ -14,17 +14,28 @@ import Select from "@mui/material/Select";
 //import "react-loading-skeleton/dist/skeleton.css";
 
 function Shop() {
-  const [books, setBooks] = useState([]);
-  const [sort, setSort] = useState("");
+  const [books, setBooks] = useState([...data]);
+  const [sort, setSort] = useState(10);
 
   const handleChange = (event) => {
     setSort(event.target.value);
+    // console.log(sort)
+    console.log(event.target.value)
+
   };
   useEffect(() => {
     setTimeout(() => {
-      setBooks(data);
+      sortBooks();
     }, 0);
-  });
+  },[sort]);
+  function sortBooks (){
+    if(sort === 10){
+      setBooks([...books].sort((a,b)=> a.title > b.title? 1 : -1))
+    }
+    else{
+      setBooks([...books].sort((a,b)=> a.title > b.title? -1 : 1))
+    }
+  };
   return (
     <div className="main">
       <Title text="Shop"></Title>
@@ -39,7 +50,6 @@ function Shop() {
                 value={sort}
                 label="Sort"
                 onChange={handleChange}
-                defaultValue={10}
               >
                 <MenuItem value={10}>Title Asc</MenuItem>
                 <MenuItem value={20}>Title Desc</MenuItem>

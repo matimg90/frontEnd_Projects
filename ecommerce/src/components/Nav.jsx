@@ -7,8 +7,9 @@ import { UserContext } from "../App";
 import { useContext } from "react";
 
 function Nav() {
+  const{value} = useContext(UserContext);
   // eslint-disable-next-line
-  const [cartItems, setCartItems] = useContext(UserContext);
+  const [cartItems, setCartItems] = value;
   return (
     <nav className="nav">
       <div></div>

@@ -74,8 +74,8 @@
   
   .dropdown {
     display: flex;
-    position: absolute;
-    top: 10.9%;
+    position:absolute;
+    top: 10%;
     overflow-y: auto;
     flex-direction: column;
     border: 1px solid gray;

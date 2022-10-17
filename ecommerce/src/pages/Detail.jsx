@@ -12,7 +12,8 @@ function Detail() {
   const location = useLocation();
   const { book } = location.state;
   const price = Math.floor(Math.random() * 100);
-  const [cartItems, setCartItems] = useContext(UserContext);
+  const{value} = useContext(UserContext);
+  const [cartItems, setCartItems] = value;
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const starNumber = Math.floor(Math.random() * 6);
   return (

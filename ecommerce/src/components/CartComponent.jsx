@@ -4,8 +4,9 @@ import { UserContext } from "../App";
 
 function CartComponent() {
   const bookPrice = 10.0;
+  const{value} = useContext(UserContext);
   // eslint-disable-next-line
-  const [cartItems, setCartItems] = useContext(UserContext);
+  const [cartItems, setCartItems] = value;
   const [total, setTotal] = useState(0);
   const calcTotal = (event) => {
     setTotal((bookPrice * event.target.value).toPrecision(4, 2));

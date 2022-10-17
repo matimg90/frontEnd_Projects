@@ -1,20 +1,24 @@
-import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../App";
+import { useNavigate } from "react-router-dom";
 import data from "../books.json";
 import "./Nav";
 function SearchBox() {
-  //const navigate = useNavigate();
-  const [inputText, setInputText] = useState("");
+  const navigate = useNavigate();
+  const { value2 } = useContext(UserContext);
+  const [searchTerm, setSearchTerm] = value2;
+  // const [inputText, setInputText] = useState("");
   const handleChange = (event) => {
-    setInputText(event.target.value);
+    setSearchTerm(event.target.value);
   };
   const onSearch = (searchTerm) => {
     console.log(searchTerm);
-    setInputText(searchTerm);
+    setSearchTerm(searchTerm);
+    navigate(`../Shop/${searchTerm}`);//, { state: { searchTerm: searchTerm } });
   };
-  const searchBook = (bookName) => {
-    console.log("searchBook");
-  };
+  // const searchBook = (bookName) => {
+  //   console.log("searchBook");
+  // };
   return (
     <>
       <div className="search-container">
@@ -22,20 +26,20 @@ function SearchBox() {
           className="searchBox__box"
           type="text"
           placeholder="Buscar..."
-          value={inputText}
+          value={searchTerm}
           onChange={handleChange}
-          onKeyPress={(e) => e.key === "Enter" && searchBook(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && onSearch(e.target.value)}
         />
       </div>
       <div className="dropdown">
         {data
           .filter((item) => {
-            const searchTerm = inputText.toLowerCase();
+            const searchTermLower = searchTerm.toString().toLowerCase();
             const bookTitle = item.title.toLocaleLowerCase();
             return (
-              searchTerm &&
-              bookTitle.startsWith(searchTerm) &&
-              searchTerm !== bookTitle
+              searchTermLower &&
+              bookTitle.startsWith(searchTermLower) &&
+              searchTermLower !== bookTitle
             );
           })
           .slice(0, 5)

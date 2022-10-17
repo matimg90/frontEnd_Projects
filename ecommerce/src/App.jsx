@@ -17,17 +17,18 @@ export const UserContext = createContext(null);
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-
+  const [searchTerm, setSearchTerm] = useState([]);
+  
   return (
     <div className="App">
       <Router>
-      <UserContext.Provider value={[cartItems,setCartItems]}>
+      <UserContext.Provider value={{value: [cartItems,setCartItems],value2: [searchTerm, setSearchTerm]} }>
         <Nav></Nav>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/cart" element={<Cart/>}></Route>
           <Route path="/shop" element={<Shop/>}></Route>
-          <Route path="/shop/ :title" element={<Shop/>}></Route>
+          <Route path="/shop/:title" element={<Shop/>}></Route>
           <Route path="/detail/:title" element={<Detail/>}></Route>
           {/* <Route path="/users/:id" element={<Users/>}></Route> */}
         </Routes>

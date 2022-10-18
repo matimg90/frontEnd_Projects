@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useContext } from "react";
 import { UserContext } from "../App";
+import { Skeleton } from "@mui/material";
 
 function Shop() {
   const [books, setBooks] = useState([...data]);
@@ -18,17 +19,18 @@ function Shop() {
   // eslint-disable-next-line
   const [searchTerm, setSearchTerm] = value2;
   const [sort, setSort] = useState(10);
+  const [isLoading, setLoading] = useState(true);
 
   const handleChange = (event) => {
     setSort(event.target.value);
-    // console.log(sort)
     console.log(event.target.value);
   };
   useEffect(() => {
     setTimeout(() => {
       // filterBooks(books, searchTerm);
-      sortBooks(sort, books);
-    }, 0);
+      setLoading(false);
+    }, 1000);
+    sortBooks(sort, books);
   }, [sort, books, searchTerm]);
 
   function sortBooks(sort, books) {
@@ -42,19 +44,17 @@ function Shop() {
   const filterBooks = (books, searchTerm) => {
     const searchTermLower = searchTerm.toString().toLowerCase();
     if (searchTermLower.length > 0) {
-      return ([...books].filter((item) => {
-          const bookTitle = item.title.toLocaleLowerCase();
-          return bookTitle.includes(searchTermLower);
-        })
-      );
+      return [...books].filter((item) => {
+        const bookTitle = item.title.toLocaleLowerCase();
+        return bookTitle.includes(searchTermLower);
+      });
     } else {
       return books;
     }
   };
   return (
-    <div className="main">
-      <Title text="Shop"></Title>
       <div className="main">
+        <Title text="Shop"></Title>
         <div className="sort-container">
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
@@ -73,29 +73,47 @@ function Shop() {
           </Box>
         </div>
         <div className="book-container">
-          {filterBooks(books,searchTerm).map((book, index) => (
+          {filterBooks(books, searchTerm).map((book, index) => (
             <Link
               to={`../detail/${book.title.toString()}`}
               key={index}
               state={{ book: book }}
             >
-              <Book
-                title={book.title.toString()}
-                author={book.author.toString()}
-                country={book.country.toString()}
-                imageLink={book.imageLink.toString()}
-                language={book.language.toString()}
-                link={book.link.toString()}
-                pages={book.pages.toString()}
-                year={book.year.toString()}
-                index={index}
-                key={index}
-              />
+              {isLoading ? (
+                <Skeleton animation="wave">
+                <div className="skeleton">
+                  <Book
+                  title={book.title.toString()}
+                  author={book.author.toString()}
+                  country={book.country.toString()}
+                  imageLink={book.imageLink.toString()}
+                  language={book.language.toString()}
+                  link={book.link.toString()}
+                  pages={book.pages.toString()}
+                  year={book.year.toString()}
+                  index={index}
+                  key={index}
+                />
+                </div>
+                </Skeleton>
+              ) : (
+                <Book
+                  title={book.title.toString()}
+                  author={book.author.toString()}
+                  country={book.country.toString()}
+                  imageLink={book.imageLink.toString()}
+                  language={book.language.toString()}
+                  link={book.link.toString()}
+                  pages={book.pages.toString()}
+                  year={book.year.toString()}
+                  index={index}
+                  key={index}
+                />
+              )}
             </Link>
           ))}
         </div>
       </div>
-    </div>
   );
 }
 

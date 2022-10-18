@@ -1,7 +1,6 @@
 import "./Book.css";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-//import { Link } from "react-router-dom";
+import { Skeleton } from "@mui/material";
 function Book({
   title,
   author,
@@ -13,15 +12,14 @@ function Book({
   year,
   index,
 }) {
-  //const images = require.context("../", true);
-  //const cover = images(`${imageLink}`).default;
   return (
       <div className="book">
+        {title.length > 0 ?
           <img
             className="image"
             src={`${process.env.PUBLIC_URL}/${imageLink}`}
             alt=""
-          />
+          /> :  <Skeleton></Skeleton>}
         <div className="book__info">
           <div>
             <label htmlFor="" className="book__info--items">

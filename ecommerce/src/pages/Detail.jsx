@@ -11,11 +11,12 @@ import Rating from "@mui/material/Rating";
 function Detail() {
   const location = useLocation();
   const { book } = location.state;
-  const price = Math.floor(Math.random() * 100);
+  const price = 10.00
   const{value} = useContext(UserContext);
   const [cartItems, setCartItems] = value;
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const label = { inputProps: { "aria-label": "Checkbox" } };
   const starNumber = Math.floor(Math.random() * 6);
+  
   return (
     <div className="main">
       <img

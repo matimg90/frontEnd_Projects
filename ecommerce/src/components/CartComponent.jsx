@@ -3,18 +3,20 @@ import "./CartComponent.css";
 import { UserContext } from "../App";
 
 function CartComponent() {
-  const bookPrice = 10.0;
+   const bookPrice = 10.0;
   const{value} = useContext(UserContext);
   // eslint-disable-next-line
   const [cartItems, setCartItems] = value;
-  const [total, setTotal] = useState(0);
-  const calcTotal = (event) => {
-    setTotal((bookPrice * event.target.value).toPrecision(4, 2));
-    console.log(event.target.value);
+  const [qty, setQty] = useState(1);
+  // eslint-disable-next-line
+  const [total, setTotal] = useState(bookPrice);
+  const onChange = (event) => {
+    setQty(event.target.value)
   };
   const handleRemoveBook = (item) => {
     setCartItems((prev) => [...prev.filter((i) => i !== item)]);
   };
+  
 
   return (
     <div className="cart">
@@ -44,12 +46,12 @@ function CartComponent() {
               <input
                 className="cart__quantity--box"
                 type="number"
-                onChange={calcTotal}
+                onChange={onChange}
                 defaultValue={1}
                 pattern="[0-9]"
               />
             </div>
-            <div className="cart__item--section">$ {total}</div>
+            <div className="cart__item--section">$ {total*qty}</div>
           </div>
         ))}
       </div>

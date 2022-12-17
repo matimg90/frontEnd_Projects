@@ -1,0 +1,9 @@
+/* .home-main{
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+} */
+.container{
+    margin: 2em;
+}
